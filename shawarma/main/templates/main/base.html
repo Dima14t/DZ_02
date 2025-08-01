@@ -3,8 +3,23 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
+    <link rel="shortcut icon"  href="" type="image/x-icon">
 </head>
-<body>
+<header>
 
+<a href="{% url 'main' %}"> Meain </a>
+<a href="{% url 'menu' %}"> Menu </a>
+<a href="{% url 'about' %}"> About </a>
+<a href="{% url 'reviews' %}"> Reviews </a>
+<a href="{% url 'contacts' %}"> Contacts  </a>
+
+
+</header>
+<body>
+{% block content %}
+
+
+
+{% endblock %}
 </body>
 </html>
