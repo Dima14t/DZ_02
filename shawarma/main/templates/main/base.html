@@ -1,21 +1,13 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
-    <link rel="shortcut icon"  href="static/images/img.png" type="image/x-icon">
-    <link rel="icon" href="static/images/img.png" type="image/x-icon">
+    <link rel="shortcut icon"  href="{% static 'images/img.png' %}" type="image/x-icon">
+    <link rel="stylesheet" href="{% static 'styles/my.css' %}">
 </head>
-<header>
 
-<a href="{% url 'main' %}"> Main </a>
-<a href="{% url 'menu' %}"> Menu </a>
-<a href="{% url 'about' %}"> About </a>
-<a href="{% url 'reviews' %}"> Reviews </a>
-<a href="{% url 'contacts' %}"> Contacts  </a>
-
-
-</header>
 <body>
 {% block content %}
 

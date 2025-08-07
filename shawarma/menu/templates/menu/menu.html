@@ -2,5 +2,20 @@
 
 {% block content %}
 <h1> Меню </h1>
+{% include 'main/navbar.html' %}
+<div class="container">
+{% for dish in menu %}
+<div class="item">
+  <li>Название: {{ dish.name }} </li>
+  <img src="{{ dish.photo.url }}" style="width: 350px; height: 250px;" alt="изображение">
+  <li>Описание: {{ dish.description }} </li>
+  <li>Состав: {{ dish.сomposition }} </li>
+  <li>Вес: {{ dish.weight }} грамм</li>
+  <li>Цена: {{ dish.price }} руб</li>
+  <li>Рейтинг: {{ dish.rating }} / 5</li>
+
+</div>
+{% endfor %}
+</div>
 
 {% endblock %}
