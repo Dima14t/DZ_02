@@ -5,14 +5,27 @@
     <meta charset="UTF-8">
     <title>Title</title>
     <link rel="shortcut icon"  href="{% static 'images/img.png' %}" type="image/x-icon">
-    <link rel="stylesheet" href="{% static 'styles/my.css' %}">
+<!--    <link rel="stylesheet" href="{% static 'styles/my.css' %}">-->
+
+    <link rel="stylesheet" href="{% static 'styles/bootstrap.css' %}">
+    <link rel="stylesheet" href="{% static 'styles/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'styles/bootstrap.rtl.css' %}">
+    <link rel="stylesheet" href="{% static 'styles/bootstrap.rtl.min.css' %}">
 </head>
 
 <body>
+
+<form action="{% url 'logoutuser' %}" method="post">
+    {% csrf_token %}
+    <button>exit</button>
+</form>
+
 {% block content %}
 
 
-
 {% endblock %}
+
+<script src="{% static 'js/bootstrap.bundle.js' %}"></script>
+<script src="{% static 'js/bootstrap.bundle.min.js' %}"></script>
 </body>
 </html>
