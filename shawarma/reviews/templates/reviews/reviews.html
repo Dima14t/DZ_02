@@ -4,4 +4,165 @@
 <h1> Отзывы </h1>
 {% include 'main/navbar.html' %}
 
+<style>
+ .clas{
+            background-color: #008CBA;
+        }
+</style>
+
+<div class="simple-reviews-block">
+  <h2>Отзывы работников 🤌</h2>
+
+  <div class="review-card">
+    <p>"В 'ШаурмичнойМОЯ' я работаю уже больше года.
+        Для меня важны стабильность и понятные условия.
+        Здесь я получаю честную зарплату, есть официальное оформление,
+        и всегда знаешь, что тебя ждет. Коллектив хороший, рабочее место
+        чистое и оборудованное.
+        Хорошее место для тех, кто ищет надежную работу."</p>
+    <small>- Ольга, администратор зала</small>
+  </div>
+
+  <div class="review-card">
+    <p>"Мне нравится работать в 'ШаурмичнойМОЯ'! Всегда позитивная атмосфера,
+        вкусная шаурма (пробую ее в перерывах!), и приятные коллеги.
+        Отличный старт для тех, кто хочет получить опыт в сфере общественного питания."</p>
+    <small>- Дмитрий, помощник повара</small>
+  </div>
+
+     <div class="review-card">
+    <p>"Работа в 'ШаурмичнойМОЯ' – это не просто работа, а настоящая команда!
+        Атмосфера всегда дружелюбная, а коллеги готовы помочь.
+        Руководство ценит наши усилия, что очень мотивирует.
+        Зарплата всегда вовремя, а график стараются подстраивать под наши возможности.
+        Я рада быть частью такой дружной команды!"</p>
+    <small>- Елена, продавец-кассир</small>
+  </div>
+
+   <div class="review-card">
+    <p>"Я пришла в 'ШаурмичнуюМОЯ' без особого опыта, но меня быстро всему научили.
+        Инструкторы терпеливые, а обучение проходит на практике. Теперь я уверенно
+        готовлю все виды шаурмы и знаю, как быстро и качественно обслуживать клиентов.
+        Ценю, что здесь есть возможность расти и улучшать свои навыки."</p>
+    <small>- Алексей, повар-шаурмист</small>
+  </div>
+
+</div>
+
+<style>
+.simple-reviews-block {
+  font-family: sans-serif;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  background-color: #fefefe;
+  max-width: 1300px;
+  margin: 125px auto;
+}
+.simple-reviews-block h2 {
+  text-align: center;
+  color: #333;
+  font-size: 1.2em;
+  margin-bottom: 10px;
+}
+.review-card {
+  background-color: #fff;
+  padding: 8px;
+  margin-bottom: 8px;
+  border-radius: 3px;
+  box-shadow: 0 1px 2px rgba(0,0,0,0.05);
+}
+.review-card p {
+  margin: 0 0 4px 0;
+  color: #444;
+  font-size: 0.85em;
+}
+.review-card small {
+  color: #777;
+  font-size: 0.7em;
+  display: block;
+  text-align: right;
+}
+</style>
+
+
+<style>
+    #text, #name {
+        width: 50%;
+        padding: 15px;
+        margin-bottom: 10px;
+    }
+    .btn1 {
+        padding: 10px 15px;
+        background-color: #28a745;
+        color: white;
+        border-radius: 10px;
+        cursor: pointer;
+    }
+    .review {
+        border: 1px solid #ddd;
+        padding: 10px;
+        margin: 10px 0;
+        display: flex;
+        justify-content: space-between;
+    }
+</style>
+
+<h2>Оставить отзыв</h2>
+
+<input id="name" placeholder="Ваше имя" required>
+<input id="text" placeholder="Ваш отзыв" required>
+
+<center>
+<button class="btn1" onclick="addReview()">Отправить</button>
+</center>
+
+<div id="reviews"></div>
+
+<script>
+    let reviews = JSON.parse(localStorage.getItem('reviews') || '[]');
+
+    function displayReviews() {
+        document.getElementById('reviews').innerHTML = reviews.map((r, i) => `
+            <div class="review">
+                <strong>${r.name}:</strong> ${r.text}
+                <button onclick="deleteReview(${i})">Удалить</button>
+            </div>
+        `).join('') || '<i>Пока тут нет ни чего!</i>';
+    }
+
+    function addReview() {
+        const name = document.getElementById('name').value.trim();
+        const text = document.getElementById('text').value.trim();
+        if (name && text) {
+            reviews.push({ name, text });
+            localStorage.setItem('reviews', JSON.stringify(reviews));
+            displayReviews();
+            document.getElementById('name').value = '';
+            document.getElementById('text').value = '';
+        }
+    }
+
+    function deleteReview(index) {
+        reviews.splice(index, 1);
+        localStorage.setItem('reviews', JSON.stringify(reviews));
+        displayReviews();
+    }
+
+    displayReviews();
+</script>
+
+
+
+<center>
+<div class="clas">
+
+ <h3>  Волгоградская область, город Шаховская, въезд Гагарина, 41 </h3>
+
+ <h3> 2024 Мой сайт. Все права защищены. </h3>
+
+</div>
+    
+</center>
+
 {% endblock %}

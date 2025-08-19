@@ -2,21 +2,90 @@
 
 {% block content %}
 {% include 'main/navbar.html' %}
-<h1> ГЛАВНАЯ СТРАНИЦА ! </h1>
+
 
 <div>
-<div style="position: absolute;"><span style="color: red;"> </span>
+<div style="position: absolute;"><span> </span>
 
 </div>
-     <img  src="static/images/images_cms-image-000112978.jpg"  style="width: 1500px; height: 600px;" alt="Описание изображения">>
+     <img  src="static/images/images_cms-image-000112978.jpg"  style="width: 1500px; height: 600px;" alt="Описание изображения">
 
 </div>
 
-     <h2> У нас вы найдете 16 видов шаурмы: для вегетарианцев, спортсменов,
-     с морепродуктами, с тунцом, с креветками, любимая классика и многое другое.
-     В нашем меню представлена собственная рецептура, авторские соусы и
-     неповторимый вкус ароматного мяса, благодаря специальному маринаду.
-     А также свежие овощи и зелень, которые делают вашу шаурму вкусной и
-     питательной. В шаурме содержатся пищевые компоненты, содержащие в себе
-     полезные свойства для вашего безопасного завтрака, обеда и ужина. </h2>
+ <style>
+
+      .container {
+            text-align: center; /* Центрирует содержимое по горизонтали */
+        }
+
+        .btn3 {
+            background-color: #4CAF50; /* Зеленый цвет */
+            border: none;
+            color: white;
+            padding: 15px 32px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+
+        .btn4 {
+            background-color: #008CBA; /* Синий цвет */
+            border: none;
+            color: white;
+            padding: 15px 32px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+
+        .clas{
+            background-color: #008CBA;
+        }
+    </style>
+
+<h1 class="container"> ШаурмичнаяМОЯ </h1>
+
+<div class="container">
+<button class="btn3" onclick="window.location.href='/signupuser'">Регистрация</button>
+<button class="btn4" onclick="window.location.href='/loginuser'">Вход</button>
+</div>
+
+<h2>Что такое шаверма?</h2>
+
+<h3>
+    Шаверма (также известна как шаурма, донер кебаб, гирос, в зависимости от региона и способа приготовления) — это популярное блюдо ближневосточной кухни, которое состоит из тонко нарезанного мяса, обжаренного на вертикальном вертеле, которое затем заворачивается в лаваш или питу с добавлением различных соусов, овощей и приправ.
+</h3>
+
+<div style="display: flex; align-items: center;">  <!-- Flexbox контейнер -->
+    <img src="static/images/img_1.png" style="width: 630px; height: 550px; border-radius: 50px" alt="Описание изображения">
+    <div style="margin-left: 20px;">  <!-- Отступ между изображением и текстом -->
+        <h2>Основные компоненты шавермы:</h2>
+        <h3>
+              Мясо, лаваш или пита, соус, овощи, специи.
+       </h3>
+    </div>
+</div>
+<h2>
+Идеально для перекуса на ходу: Шаурма - это отличный вариант, когда нужно быстро
+перекусить, не тратя много времени на поиски и приготовление еды.
+Удобно есть в любом месте: Её легко есть на улице, в транспорте или на работе.
+Никаких тарелок и приборов не требуется!
+Быстро готовится: В большинстве случаев шаурму готовят очень быстро,
+так что вам не придется долго ждать свой заказ. </h2>
+
+<center>
+<div class="clas">
+
+ <h3>  Волгоградская область, город Шаховская, въезд Гагарина, 41 </h3>
+
+ <h3> 2024 Мой сайт. Все права защищены. </h3>
+
+</div>
+</center>
 {% endblock %}
