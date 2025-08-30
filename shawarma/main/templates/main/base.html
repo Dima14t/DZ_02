@@ -22,10 +22,12 @@
 
 <body>
 
-<form action="{% url 'logoutuser' %}" method="post">
-    {% csrf_token %}
-    <button>exit</button>
-</form>
+<div style="text-align: right; margin-right: 30px; margin-top: 20px;">
+    <form action="{% url 'logoutuser' %}" method="post">
+        {% csrf_token %}
+        <button style="border-radius: 20%; width: 60px; height: 30px;">Выход </button>
+    </form>
+</div>
 
 {% block content %}
 
