@@ -23,10 +23,12 @@
 <body>
 
 <div style="text-align: right; margin-right: 30px; margin-top: 20px;">
-    <form action="{% url 'logoutuser' %}" method="post">
-        {% csrf_token %}
-        <button style="border-radius: 20%; width: 60px; height: 30px;">Выход </button>
-    </form>
+<!--    <form action="{% url 'logoutuser' %}" method="post">-->
+<!--        {% csrf_token %}-->
+<!--        <button style="border-radius: 20%; width: 60px; height: 30px;">Выход </button>-->
+<!--    </form>-->
+
+    <li><a href="{% url 'logoutuser' %}">LOGOUT</a></li>
 </div>
 
 {% block content %}

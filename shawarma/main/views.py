@@ -52,8 +52,6 @@ def loginuser(request):
 
 
 # Выход
-@login_required
 def logoutuser(request):
-    if request.method == 'POST':
-        logout(request)
-        return redirect('main')
+    logout(request)
+    return redirect('main')
